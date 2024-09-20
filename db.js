@@ -11,7 +11,7 @@ const ObjectId = mongoose.ObjectId;
 //Defining schemas
 
 const User = new schema({
-  email:String,
+  email:{type:String,unique:true},
   password:String,
   name:String
 })
