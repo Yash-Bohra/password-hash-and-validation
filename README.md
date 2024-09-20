@@ -33,8 +33,21 @@ This file contains the code in which following endpoints are created
 -- import userModel and todoModel from db.js
 -- import auth and JWT_SECRET from auth.js
 
-# Testing
+# Encrypting Passwords
 
-Postman is used to test all the endpoints on http protocol on my local server
+"npm i bcrypt" is used to use bcrypt dependency locally
+
+-- Following commands are been used
+1. bcrypt.has(password,rounds) --> to hash password with a salt
+2. bcrypt.compare(password,response.password) --> to compare saved and requested password hashes
+
+# validating the Passwords
+
+"npm i zod" is used to use zod dependency locally
+
+-- Following commands are used
+
+1. const requiredBody = z.object({}) --> to create a validated scheme so incoming requests can be validated
+2. const parsedDataWithSuccess = requiredBody.safeParse(req.body) --> to safely parse the requested credentials and return returnable error message
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
